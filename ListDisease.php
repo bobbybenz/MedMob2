@@ -12,7 +12,7 @@
 .med-side-nav{
   position: fixed;
   margin-top: -146px;
-  width: 220px;    
+  width: 17.5%;    
 }
 
 
@@ -63,14 +63,14 @@
                 <!-- Accordion List -->
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
-                      <div class="panel-heading" role="tab" id="headingOne">
+                      <div class="panel-heading" role="tab" id="heading1">
                         <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
                             โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ
                           </a>
                         </h4>
                       </div>
-                      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                      <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
                         <div class="panel-body">
                          
                             <div id="table-disease1">
@@ -80,35 +80,127 @@
                      
                         </div>
                       </div>
-                    </div>
+                    </div><!-- panel panel-default -->
+
                     <div class="panel panel-default">
-                      <div class="panel-heading" role="tab" id="headingTwo">
+                      <div class="panel-heading" role="tab" id="heading2">
                         <h4 class="panel-title">
-                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
                             โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร
                           </a>
                         </h4>
                       </div>
-                      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                      <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
                         <div class="panel-body">
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+                           <div id="table-disease2">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
                         </div>
                       </div>
                     </div><!-- class="panel panel-default" -->
+                    
                     <div class="panel panel-default">
-                      <div class="panel-heading" role="tab" id="headingThree">
+                      <div class="panel-heading" role="tab" id="heading3">
                         <h4 class="panel-title">
-                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
                             โรคระบบประสาทและสมอง
                           </a>
                         </h4>
                       </div>
-                      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                      <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
                         <div class="panel-body">
-                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+                           <div id="table-disease3">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
                         </div>
                       </div>
                     </div><!-- class="panel panel-default" -->
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading4">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            โรคระบบไหลเวียนโลหิตและโรคเลือด
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                        <div class="panel-body">
+
+                           <div id="table-disease4">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading5">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            โรคระบบกระดูกและกล้ามเนื้อ
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                        <div class="panel-body">
+
+                           <div id="table-disease5">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading6">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            โรคระบบต่อมไร้ท่อและโภชนาการ
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                        <div class="panel-body">
+
+                           <div id="table-disease6">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading7">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                            โรคระบบทางเดินปัสสาวะ
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                        <div class="panel-body">
+
+                           <div id="table-disease5">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->                    
                   </div><!-- class="panel-group" id="accordion" -->
 
 
@@ -427,8 +519,8 @@
       var year = $('#sel-year').val();
       //alert(year);
       showTalbeDisease(year,'โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ','table-disease1');
-      // showTalbeDisease(year,'โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร','table-disease2');
-      // showTalbeDisease(year,'โรคระบบประสาทและสมอง','table-disease3');
+      showTalbeDisease(year,'โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร','table-disease2');
+      showTalbeDisease(year,'โรคระบบประสาทและสมอง','table-disease3');
       // showTalbeDisease(year,'โรคระบบไหลเวียนโลหิตและโรคเลือด','table-disease4');
       // showTalbeDisease(year,'โรคระบบกระดูกและกล้ามเนื้อ','table-disease5');
       // showTalbeDisease(year,'โรคระบบต่อมไร้ท่อและโภชนาการ','table-disease6');
