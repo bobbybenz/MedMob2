@@ -130,7 +130,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href=""><span>จัดการลักษณะอาการ</span></a></li>
             <li><a href="diseaseManage.php"><span>จัดการโรค</span></a></li>
-            <li><a href=""><span>จัดการคำถามอาการ</span></a></li>
+            <li><a href="SymptomNodeShow.php"><span>จัดการคำถามอาการ</span></a></li>
             
           </ul><!-- /.sidebar-menu -->
         </section>

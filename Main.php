@@ -26,8 +26,8 @@
               <option value = "5">โรคระบบกระดูกและกล้ามเนื้อ</option>
               <option value = "6">โรคระบบต่อมไร้ท่อและโภชนาการ</option>
               <option value = "7">โรคระบบทางเดินปัสสาวะ</option>
-              <option value = "8">โรคระบบอวัยวะสืบพันธุ์ชาย</option>
-              <option value = "9">โรคระบบอวัยวะสืบพันธุ์หญิงและการตั้งครรภ์</option>
+<!--               <option value = "8">โรคระบบอวัยวะสืบพันธุ์ชาย</option>
+              <option value = "9">โรคระบบอวัยวะสืบพันธุ์หญิงและการตั้งครรภ์</option> -->
               <option value = "10">โรคหู</option>
               <option value = "11">โรคตา</option>
               <option value = "12">โรคผิวหนัง</option>
@@ -51,32 +51,7 @@
           <!-- Your Page Content Here -->
       
 
-        <!-- <div class="row" id="filter-row">
-            <div class="col-md-6"></div>
-             <div class="col-md-6">
-              <select id="disease-select" style="margin-top: 25px;" class="form-control">
-              <option value = "1">โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</option>
-              <option value = "2">โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร</option>
-              <option value = "3">โรคระบบประสาทและสมอง</option>
-              <option value = "4">โรคระบบไหลเวียนโลหิตและโรคเลือด</option>
-              <option value = "5">โรคระบบกระดูกและกล้ามเนื้อ</option>
-              <option value = "6">โรคระบบต่อมไร้ท่อและโภชนาการ</option>
-              <option value = "7">โรคระบบทางเดินปัสสาวะ</option>
-              <option value = "8">โรคระบบอวัยวะสืบพันธุ์ชาย</option>
-              <option value = "9">โรคระบบอวัยวะสืบพันธุ์หญิงและการตั้งครรภ์</option>
-              <option value = "10">โรคหู</option>
-              <option value = "11">โรคตา</option>
-              <option value = "12">โรคผิวหนัง</option>
-              <option value = "13">โรคติดต่อทางเพศสัมพันธ์</option>
-              <option value = "14 สารพิษ และสัตว์พิษ">โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ</option>
-              <option value = "15">โรคติดเชื้อ</option>
-              <option value = "16">โรคพยาธิ</option>
-              <option value = "17">โรคมะเร็ง</option>
-              <option value = "18">โรคติดเชื้ออุบัติใหม่</option>
-            </select>
-            </div><!-- col-md-6-->  
-          
-          <!-- </div> --><!-- filter-row -->
+      
           
           <div class="row">
             <div class="col-md-12">

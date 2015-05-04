@@ -193,14 +193,205 @@
                       <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
                         <div class="panel-body">
 
-                           <div id="table-disease5">
+                           <div id="table-disease7">
                               <!-- Return Ajax file: tableListDiseaseAjax.php -->
 
                             </div><!-- /.box-body -->
                      
                         </div>
                       </div>
-                    </div><!-- class="panel panel-default" -->                    
+                    </div><!-- class="panel panel-default" -->      
+
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading8">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                            โรคหู
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+                        <div class="panel-body">
+
+                           <div id="table-disease8">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->     
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading9">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                            โรคตา
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9">
+                        <div class="panel-body">
+
+                           <div id="table-disease9">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->     
+
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading10">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapse9">
+                            โรคผิวหนัง
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+                        <div class="panel-body">
+
+                           <div id="table-disease10">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->     
+
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading11">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                            โรคติดต่อทางเพศสัมพันธ์
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+                        <div class="panel-body">
+
+                           <div id="table-disease11">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->     
+
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading12">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                            โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
+                        <div class="panel-body">
+
+                           <div id="table-disease12">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->     
+
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading13">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                            โรคติดเชื้อ
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
+                        <div class="panel-body">
+
+                           <div id="table-disease13">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->     
+
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading14">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                            โรคพยาธิ
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14">
+                        <div class="panel-body">
+
+                           <div id="table-disease14">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->     
+
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading15">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                            โรคมะเร็ง
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15">
+                        <div class="panel-body">
+
+                           <div id="table-disease15">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->     
+
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading16">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                            โรคติดเชื้ออุบัติใหม่
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
+                        <div class="panel-body">
+
+                           <div id="table-disease16">
+                              <!-- Return Ajax file: tableListDiseaseAjax.php -->
+
+                            </div><!-- /.box-body -->
+                     
+                        </div>
+                      </div>
+                    </div><!-- class="panel panel-default" -->                   
+                  
+
+
                   </div><!-- class="panel-group" id="accordion" -->
 
 
@@ -209,132 +400,6 @@
             </div><!-- list-disease -->
 
             <!-- <hr style="border-color:#958F8F -moz-use-text-color -moz-use-text-color"> -->
-
-
-          <div class="row" id="list-disease2">
-            <div class="col-md-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body" id="table-disease2">
-                  <!-- Return Ajax file: tableListDiseaseAjax.php -->
-                </div><!-- /.box-body -->
-              </div><!--box-->
-            </div>
-          </div><!-- list-disease -->
-          
-          <!-- <hr style="border-color:#958F8F -moz-use-text-color -moz-use-text-color"> -->
-          <div class="row" id="list-disease3">
-            <div class="col-md-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">โรคระบบประสาทและสมอง</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body" id="table-disease3">
-                  <!-- Return Ajax file: tableListDiseaseAjax.php -->
-                </div><!-- /.box-body -->
-              </div><!--box-->
-            </div>
-          </div><!-- list-disease -->
-
-          <!-- <hr style="border-color:#958F8F -moz-use-text-color -moz-use-text-color"> -->
-          <div class="row" id="list-disease4">
-            <div class="col-md-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">โรคระบบไหลเวียนโลหิตและโรคเลือด</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body" id="table-disease4">
-                  <!-- Return Ajax file: tableListDiseaseAjax.php -->
-                </div><!-- /.box-body -->
-              </div><!--box-->
-            </div>
-          </div><!-- list-disease -->
-
-          <!-- <hr style="border-color:#958F8F -moz-use-text-color -moz-use-text-color"> -->
-          <div class="row" id="list-disease5">
-            <div class="col-md-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">โรคระบบกระดูกและกล้ามเนื้อ</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body" id="table-disease5">
-                  <!-- Return Ajax file: tableListDiseaseAjax.php -->
-                </div><!-- /.box-body -->
-              </div><!--box-->
-            </div>
-          </div><!-- list-disease -->
-
-          <!-- <hr style="border-color:#958F8F -moz-use-text-color -moz-use-text-color"> -->
-          <div class="row" id="list-disease6">
-            <div class="col-md-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">โรคระบบต่อมไร้ท่อและโภชนาการ</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body" id="table-disease6">
-                  <!-- Return Ajax file: tableListDiseaseAjax.php -->
-                </div><!-- /.box-body -->
-              </div><!--box-->
-            </div>
-          </div><!-- list-disease -->
-
-          <!-- <hr style="border-color:#958F8F -moz-use-text-color -moz-use-text-color"> -->
-          <div class="row" id="list-disease7">
-            <div class="col-md-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">โรคระบบทางเดินปัสสาวะ</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body" id="table-disease7">
-                  <!-- Return Ajax file: tableListDiseaseAjax.php -->
-                </div><!-- /.box-body -->
-              </div><!--box-->
-            </div>
-          </div><!-- list-disease -->
-
-          <!-- <hr style="border-color:#958F8F -moz-use-text-color -moz-use-text-color"> -->
-          <div class="row" id="list-disease8">
-            <div class="col-md-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">โรคหู</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body" id="table-disease8">
-                  <!-- Return Ajax file: tableListDiseaseAjax.php -->
-                </div><!-- /.box-body -->
-              </div><!--box-->
-            </div>
-          </div><!-- list-disease -->
-
-          <!-- <hr style="border-color:#958F8F -moz-use-text-color -moz-use-text-color"> -->
-          <div class="row" id="list-disease9">
-            <div class="col-md-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">โรคตา</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body" id="table-disease9">
-                  <!-- Return Ajax file: tableListDiseaseAjax.php -->
-                </div><!-- /.box-body -->
-              </div><!--box-->
-            </div>
-          </div><!-- list-disease -->
-
-          <!-- <hr style="border-color:#958F8F -moz-use-text-color -moz-use-text-color"> -->
-          <div class="row" id="list-disease10">
-            <div class="col-md-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">โรคผิวหนัง</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body" id="table-disease10">
-                  <!-- Return Ajax file: tableListDiseaseAjax.php -->
-                </div><!-- /.box-body -->
-              </div><!--box-->
-            </div>
-          </div><!-- list-disease -->
 
 
 
@@ -484,7 +549,12 @@
 
         // });
         
-      
+        /**Change tab***/
+        $('.panel-heading').click(function(){
+          var temp = $(this)[0].id;
+          alert(temp.substr(7));
+        });
+
 
         //Table Disease
         updateAllTableDisease();
