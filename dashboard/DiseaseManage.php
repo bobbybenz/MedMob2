@@ -1,141 +1,8 @@
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.2 -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Ionicons -->
-    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-    <link href="../dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect.
-    -->
-     <link href="../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <!--
-  BODY TAG OPTIONS:
-  =================
-  Apply one or more of the following classes to get the 
-  desired effect
-  |---------------------------------------------------------|
-  | SKINS         | skin-blue                               |
-  |               | skin-black                              |
-  |               | skin-purple                             |
-  |               | skin-yellow                             |
-  |               | skin-red                                |
-  |               | skin-green                              |
-  |---------------------------------------------------------|
-  |LAYOUT OPTIONS | fixed                                   |
-  |               | layout-boxed                            |
-  |               | layout-top-nav                          |
-  |               | sidebar-collapse                        |  
-  |---------------------------------------------------------|
-  
-  -->
-  <?php include('../connectAzure.php');?>
-  <body class="skin-yellow">
-    <div class="wrapper">
-
-      <!-- Main Header -->
-      <header class="main-header">
-
-        <!-- Logo -->
-        <a href="" class="logo">MEDMOB</a>
-
-        <!-- Header Navbar -->
-        <nav class="navbar navbar-static-top" role="navigation">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-          </a>
-          <!-- Navbar Right Menu -->
-          <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-              <!-- User Account Menu -->
-              <li class="dropdown user user-menu">
-                <!-- Menu Toggle Button -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <!-- The user image in the navbar-->
-                  <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                  <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs"><b>ผู้ดูแลระบบ</b></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- The user image in the menu -->
-                  <li class="user-header">
-                    <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
-                    <p>
-                      
-                      <big>Admin</big>
-                    </p>
-                  </li>
-      
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Dashboard</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Log out</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-      <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
-
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-
-          <!-- Sidebar user panel (optional) -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
-            </div>
-            <div class="pull-left info">
-              <p>ผู้ดูแลระบบ</p>
-              <!-- Status -->
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
-
-
-
-          <!-- Sidebar Menu -->
-          <ul class="sidebar-menu">
-            <li class="header">MEDMOB</li>
-            <li><a href="../Main.php"><span>MEDMOB Statistic</span></a></li>
-            <li class="header">Dashboard</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li ><a href="SymptomManage.php"><span>จัดการลักษณะอาการ</span></a></li>
-            <li class="active"><a href=""><span>จัดการโรค</span></a></li>
-            <li><a href="SymptomNodeShow.php"><span>จัดการคำถามอาการ</span></a></li>
-            
-          </ul><!-- /.sidebar-menu -->
-        </section>
-        <!-- /.sidebar -->
-      </aside>
+<?php 
+  $title = "MEDMOB | จัดการข้อมูล";
+  $page = "disease";
+?>
+<?php include('header_dash.php');?>
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -159,7 +26,209 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row">
             <div class="col-md-12">
               <div class="box">
-                <div class="" style = "width:400px;height: 700px"></div>
+                <div class="box-body">
+                  <!-- Content Page -->
+
+<?php
+     include('../connectAzure.php'); 
+?>
+<?php
+  //*** Add Condition ***//
+    if(isset($_POST["hdnCmd"])){
+      if($_POST["hdnCmd"] == "Add")
+      {
+        $strSQL = "INSERT INTO disease ";
+        $strSQL .="(name,type) ";
+        $strSQL .="VALUES ";
+        $strSQL .="('".$_POST["txtAddName"]."','".$_POST["txtAddTypeOfSymptom"]."')";
+        $objQuery = mysql_query($strSQL);
+        if(!$objQuery)
+        {
+          echo "Error Save [".mysql_error()."]";
+        }
+      }
+    } 
+
+    //*** Update Condition ***//
+    if(isset($_POST["hdnCmd"])){
+      if($_POST["hdnCmd"] == "Update")
+      {
+        $strSQL = "UPDATE disease SET ";
+        
+        $strSQL .="name = '".$_POST["txtEditName"]."' ";
+        $strSQL .=",type = '".$_POST["txtEditTypeOfSymptom"]."' ";
+        $strSQL .="WHERE diseaseID = '".$_POST["txtEditdiseaseID"]."' ";
+        $objQuery = mysql_query($strSQL);
+        if(!$objQuery)
+        {
+          echo "Error Update [".mysql_error()."]";
+        }
+      }
+    }
+    //*** Delete Condition ***//
+    if(isset($_GET["Action"])){
+      if($_GET["Action"] == "Del")
+      {
+        $strSQL = "DELETE FROM disease ";
+        $strSQL .="WHERE diseaseID = '".$_GET["DisID"]."' ";
+        $strSQLdelTreat = "DELETE FROM treatment WHERE diseaseID =".$_GET["DisID"];
+        $objQuery = mysql_query($strSQL);
+        $objQuerydelTreat = mysql_query($strSQLdelTreat);
+        if(!$objQuery)
+        {
+          echo "Error Delete [".mysql_error()."]";
+        }
+        if(!$objQuerydelTreat)
+        {
+          echo "Error Delete [".mysql_error()."]";
+        }
+      }
+    }
+
+    $strSQL = "SELECT * FROM disease";
+  $objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
+
+  ?>
+
+  
+
+<!-- <div class="box-body"> -->
+
+  <form name = "diseaseMN" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+    <input type="hidden" name="hdnCmd" value="">
+    <table id="test" class="table table-bordered table-hover">
+      <thead>
+      <tr>
+        <th style="width: 10%;"><div align="center">Disease ID</div></th>
+        <th><div align="center">Disease Name</div></th>
+        <th><div align="center">Type of Disease</div></th>
+        <th style="width: 10%;"><div align="center">Edit</div></th>
+        <th style="width: 10%;"><div align="center">Delete</div></th>
+      </tr>
+      </thead>
+      <tbody>
+  <?php
+    while ($objResult = mysql_fetch_array($objQuery)) {
+      
+  ?>
+  <?php
+  //Check Edit Mode
+      if(isset($_GET["DisID"]) and isset($_GET["Action"])){
+        if($objResult["diseaseID"] == $_GET["DisID"] and $_GET["Action"] == "Edit")
+        {
+      ?>
+      <tr>
+        
+        <td><input name = "txtEditdiseaseID" type = "hidden" value = "<?php echo $objResult['diseaseID'];?>"><?php echo $objResult['diseaseID'];?></td>
+        <td><input name = "txtEditName" type = "text" class="form-control" autofocus value ="<?php echo $objResult['name'];?>"></td>
+        <td>
+            <select name = "txtEditTypeOfSymptom" class="form-control">
+              <option value = "โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ" <?php if($objResult["type"]=="โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ") echo "selected";?>>โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</option>
+              <option value = "โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร" <?php if($objResult["type"]=="โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร") echo "selected";?>>โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร</option>
+              <option value = "โรคระบบประสาทและสมอง" <?php if($objResult["type"]=="โรคระบบประสาทและสมอง") echo "selected";?>>โรคระบบประสาทและสมอง</option>
+              <option value = "โรคระบบไหลเวียนโลหิตและโรคเลือด" <?php if($objResult["type"]=="โรคระบบไหลเวียนโลหิตและโรคเลือด") echo "selected";?>>โรคระบบไหลเวียนโลหิตและโรคเลือด</option>
+              <option value = "โรคระบบกระดูกและกล้ามเนื้อ" <?php if($objResult["type"]=="โรคระบบกระดูกและกล้ามเนื้อ") echo "selected";?>>โรคระบบกระดูกและกล้ามเนื้อ</option>
+              <option value = "โรคระบบต่อมไร้ท่อและโภชนาการ" <?php if($objResult["type"]=="โรคระบบต่อมไร้ท่อและโภชนาการ") echo "selected";?>>โรคระบบต่อมไร้ท่อและโภชนาการ</option>
+              <option value = "โรคระบบทางเดินปัสสาวะ" <?php if($objResult["type"]=="โรคระบบทางเดินปัสสาวะ") echo "selected";?>>โรคระบบทางเดินปัสสาวะ</option>
+              <option value = "โรคระบบอวัยวะสืบพันธุ์ชาย" <?php if($objResult["type"]=="โรคระบบอวัยวะสืบพันธุ์ชาย") echo "selected";?>>โรคระบบอวัยวะสืบพันธุ์ชาย</option>
+              <option value = "โรคระบบอวัยวะสืบพันธุ์หญิงและการตั้งครรภ์" <?php if($objResult["type"]=="โรคระบบอวัยวะสืบพันธุ์หญิงและการตั้งครรภ์") echo "selected";?>>โรคระบบอวัยวะสืบพันธุ์หญิงและการตั้งครรภ์</option>
+              <option value = "โรคหู" <?php if($objResult["type"]=="โรคหู") echo "selected";?>>โรคหู</option>
+              <option value = "โรคตา" <?php if($objResult["type"]=="โรคตา") echo "selected";?>>โรคตา</option>
+              <option value = "โรคผิวหนัง" <?php if($objResult["type"]=="โรคผิวหนัง") echo "selected";?>>โรคผิวหนัง</option>
+              <option value = "โรคติดต่อทางเพศสัมพันธ์" <?php if($objResult["type"]=="โรคติดต่อทางเพศสัมพันธ์") echo "selected";?>>โรคติดต่อทางเพศสัมพันธ์</option>
+              <option value = "โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ" <?php if($objResult["โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ"]=="head") echo "selected";?>>โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ</option>
+              <option value = "โรคติดเชื้อ" <?php if($objResult["type"]=="โรคติดเชื้อ") echo "selected";?>>โรคติดเชื้อ</option>
+              <option value = "โรคพยาธิ" <?php if($objResult["type"]=="โรคพยาธิ") echo "selected";?>>โรคพยาธิ</option>
+              <option value = "โรคมะเร็ง" <?php if($objResult["type"]=="โรคมะเร็ง") echo "selected";?>>โรคมะเร็ง</option>
+              <option value = "โรคติดเชื้ออุบัติใหม่" <?php if($objResult["type"]=="โรคติดเชื้ออุบัติใหม่") echo "selected";?>>โรคติดเชื้ออุบัติใหม่</option>
+            </select>
+
+        </td>
+        <td colspan="2" align="right"><div align="center">
+            <input name="btnUpdate" class="btn btn-info" type="button" id="btnUpdate" value="Update" OnClick="diseaseMN.hdnCmd.value='Update';diseaseMN.submit();">
+            <input name="btnCancel" class="btn btn-default" type="button" id="btnCancel" value="Cancel" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>';">
+        </div></td>
+        <td style="display:none;"></td>
+      </tr>
+  <?php
+        }//Edit Mode
+        else{//if not edit mode but have Get Variable
+      ?>
+    <tr id="<?php echo $objResult["diseaseID"];?>">
+      <td><?php echo $objResult['diseaseID'];?></td>
+      <td><a href = "TreatmentManage.php?diseaseID=<?php echo $objResult['diseaseID'];?>&diseaseName=<?php echo $objResult['name'];?>" > <?php echo $objResult['name'];?></a></td>
+      <td><?php echo $objResult['type'];?></td>
+     <!--  <td><a href = "<?php echo $_SERVER["PHP_SELF"];?>?Action=Edit&DisID=<?php echo $objResult["diseaseID"];?>">Edit</a></td> -->
+      <td><a style="cursor: pointer;" onclick="changeRow('<?php echo $objResult["diseaseID"];?>','<?php echo $objResult['name'];?>','<?php echo $objResult['type'];?>');">Edit</a></td>
+      <td><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Action=Del&DisID=<?php echo $objResult["diseaseID"];?>';}">Delete</a></td>
+      
+    </tr>
+  <?php
+        }// Else of have GET variable
+      }//isset GET Variable
+      else// Don't have GET variable
+      {
+      ?>
+    <tr id="<?php echo $objResult["diseaseID"];?>">
+      <td><?php echo $objResult['diseaseID'];?></td>
+      <td><a href = "TreatmentManage.php?diseaseID=<?php echo $objResult['diseaseID'];?>&diseaseName=<?php echo $objResult['name'];?>" > <?php echo $objResult['name'];?></a></td>
+      <td><?php echo $objResult['type'];?></td>
+      <!-- <td><a href = "<?php echo $_SERVER["PHP_SELF"];?>?Action=Edit&DisID=<?php echo $objResult["diseaseID"];?>">Edit</a></td> -->
+      <td><a style="cursor: pointer;" onclick="changeRow('<?php echo $objResult["diseaseID"];?>','<?php echo $objResult['name'];?>','<?php echo $objResult['type'];?>');">Edit</a></td>
+      <td><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Action=Del&DisID=<?php echo $objResult["diseaseID"];?>';}">Delete</a></td>
+
+    </tr>
+    <?php
+         }
+      ?>
+    <?php
+     
+    }
+    ?>
+        <tr>
+          <td><input type= "hidden" name="txtAddDiseaseID" size="5"></td>
+          <td><input type="text" class="form-control" name="txtAddName"></td>
+          <td>
+             <select name = "txtAddTypeOfSymptom" class="form-control">
+              <option value = "โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ">โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</option>
+              <option value = "โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร">โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร</option>
+              <option value = "โรคระบบประสาทและสมอง">โรคระบบประสาทและสมอง</option>
+              <option value = "โรคระบบไหลเวียนโลหิตและโรคเลือด">โรคระบบไหลเวียนโลหิตและโรคเลือด</option>
+              <option value = "โรคระบบกระดูกและกล้ามเนื้อ">โรคระบบกระดูกและกล้ามเนื้อ</option>
+              <option value = "โรคระบบต่อมไร้ท่อและโภชนาการ">โรคระบบต่อมไร้ท่อและโภชนาการ</option>
+              <option value = "โรคระบบทางเดินปัสสาวะ">โรคระบบทางเดินปัสสาวะ</option>
+              <option value = "โรคระบบอวัยวะสืบพันธุ์ชาย">โรคระบบอวัยวะสืบพันธุ์ชาย</option>
+              <option value = "โรคระบบอวัยวะสืบพันธุ์หญิงและการตั้งครรภ์">โรคระบบอวัยวะสืบพันธุ์หญิงและการตั้งครรภ์</option>
+              <option value = "โรคหู">โรคหู</option>
+              <option value = "โรคตา">โรคตา</option>
+              <option value = "โรคผิวหนัง">โรคผิวหนัง</option>
+              <option value = "โรคติดต่อทางเพศสัมพันธ์">โรคติดต่อทางเพศสัมพันธ์</option>
+              <option value = "โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ">โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ</option>
+              <option value = "โรคติดเชื้อ">โรคติดเชื้อ</option>
+              <option value = "โรคพยาธิ">โรคพยาธิ</option>
+              <option value = "โรคมะเร็ง">โรคมะเร็ง</option>
+              <option value = "โรคติดเชื้ออุบัติใหม่">โรคติดเชื้ออุบัติใหม่</option>
+            </select>
+          </td>
+          <td colspan="2" align="right">
+            <div align="center">
+              <input name="btnAdd" type="button" class="btn btn-success" id="btnAdd" value="Add" OnClick="diseaseMN.hdnCmd.value='Add';diseaseMN.submit();">
+            </div>
+          </td>
+          <td style="display:none;"></td>
+        </tr>
+      </tbody>
+      </table>
+  </form>
+<!--   </div> --><!-- box-body -->
+  <?php
+    mysql_close($objConnect);
+  ?>
+
+
+
+
+                </div><!-- box-body -->
               </div><!-- box -->
             </div><!-- col-md-12 -->
 
@@ -187,5 +256,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Optionally, you can add Slimscroll and FastClick plugins. 
           Both of these plugins are recommended to enhance the 
           user experience -->
+    <!-- DATA TABLES -->
+    <script src="../plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="../plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+
+    <!-- Select picker -->
+    <script type="text/javascript" src="../plugins/selectpicker/js/bootstrap-select.js"></script>
+
+<script>
+$(document).ready(function(){
+  var table = $('#test').dataTable({
+    "iDisplayLength": 25
+
+  });
+
+});
+
+function changeRow(diseaseID,diseaseName,type){
+  //alert(diseaseID+diseaseName+type);
+  //$('#'+diseaseID).html("<td><input name = 'txtEditdiseaseID' type = 'hidden' value='"+diseaseID+"'>"+diseaseID+"</td><td><input name = 'txtEditName' type = 'text' class='form-control' autofocus value ='"+diseaseName+"'></td><td><select name = 'txtEditTypeOfSymptom' class='form-control'><option value=''>test</option><option value = 'โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ'"if(type=='โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ') document.write('selected');+">โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</option></select></td><td><input type='text' value='Test'></td><td><input type='text' value='Test'></td>");
+$.ajax({
+        type: "POST",
+        url: "dataTableAjax.php",
+        data: {diseaseID: diseaseID,diseaseName:diseaseName,type:type,action:"diseaseManageEdit"},
+        success: function(result) {
+            //alert("result : "+result);
+            //$('#'+idNode).html(result);
+            //$('#testModal').modal('hide');
+            $('#'+diseaseID).html(result);
+        }
+    });
+
+}
+</script>
+
   </body>
 </html>

@@ -207,22 +207,22 @@ function drawBasic() {
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["โรค", "จำนวน"],
-        ["1", 80],
-        ["2", 49],
-        ["3", 30],
-        ["4", 45],
-        ["5", 74],
-        ["6", 49],
-        ["7", 30],
-        ["8", 43],
-        ["9", 88],
-        ["10", 49],
-        ["11", 30],
-        ["12", 45],
-        ["13", 78],
-        ["14", 49],
-        ["15", 30],
-        ["16", 49]
+        ["ระบบทางเดินหายใจ", 80],
+        ["ระบบทางเดินอาหาร", 49],
+        ["ระบบประศาทและสมอง", 30],
+        ["ระบบไหลเวียนโลหิต", 45],
+        ["ระบบกระดูก", 74],
+        ["ระบบต่อมไร้ท่อ", 49],
+        ["ระบบทางเดินปัสสาวะ", 30],
+        ["โรคหู", 43],
+        ["โรคตา", 88],
+        ["โรคผิวหนัง", 49],
+        ["ติดต่อทาเพศสัมพันธ์", 30],
+        ["สารพิษ และสัตว์พิษ", 45],
+        ["โรคติดเชื้อ", 78],
+        ["โรคพยาธิ", 49],
+        ["โรคมะเร็ง", 30],
+        ["โรคติดเชื้อุบัติใหม่", 49]
       ]);
 
 
@@ -232,6 +232,7 @@ function drawBasic() {
         height: 500,
         bar: {groupWidth: "65%"},
         legend: { position: "none" },
+        hAxis: {titleTextStyle: {color: 'black'}, count: -1, viewWindowMode: 'pretty', slantedText: true}
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("curve_chart"));
       chart.draw(data, options);

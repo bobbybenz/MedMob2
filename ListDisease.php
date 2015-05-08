@@ -56,7 +56,7 @@
           
           <!-- Your Page Content Here -->
         <div class="row" id="show-disease">
-          <div class="col-md-9">
+          <div class="col-md-12">
             <div class="row" id="list-disease1">
             <div class="col-md-12">
               <div class="box">
@@ -405,35 +405,35 @@
 
           </div><!--Content table col-md9-->
 
-          <div class="col-md-3">
+         <!--  <div class="col-md-3">
             <div class="box" id="nav-disease">
               <div class="box-body">
                 <nav style="" class="med-side-na">
                   <ul class="nav bs-docs-sidenav">
-                    <li class=""><a href="#list-disease1" style="padding: 3px 15px;">โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</a></li>
-                    <li class=""><a href="#list-disease2" style="padding: 3px 15px;">โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร</a></li>
-                    <li class=""><a href="#list-disease3" style="padding: 3px 15px;">โรคระบบประสาทและสมอง</a></li>
-                    <li class=""><a href="#list-disease4" style="padding: 3px 15px;">โรคระบบไหลเวียนโลหิตและโรคเลือด</a></li>
-                    <li class=""><a href="#list-disease5" style="padding: 3px 15px;">โรคระบบกระดูกและกล้ามเนื้อ</a></li>
-                    <li class=""><a href="#list-disease6" style="padding: 3px 15px;" >โรคระบบต่อมไร้ท่อและโภชนาการ</a></li>
-                    <li class=""><a href="#list-disease7" style="padding: 3px 15px;">โรคระบบทางเดินปัสสาวะ</a></li>
-                 <!--    <li class=""><a href="#list-disease8" style="padding: 3px 15px;">โรคระบบอวัยวะสืบพันธุ์ชาย</a></li>
-                    <li class=""><a href="#list-disease9" style="padding: 3px 15px;">โรคระบบอวัยวะสืบพันธุ์หญิงและการตั้งครรภ์</a></li> -->
-                    <li class=""><a href="#list-disease10" style="padding: 3px 15px;">โรคหู</a></li>
-                    <li class=""><a href="#list-disease11" style="padding: 3px 15px;">โรคตา</a></li>
-                    <li class=""><a href="#list-disease12" style="padding: 3px 15px;">โรคผิวหนัง</a></li>
-                    <li class=""><a href="#list-disease13" style="padding: 3px 15px;">โรคติดต่อทางเพศสัมพันธ์</a></li>
-                    <li class=""><a href="#list-disease14" style="padding: 3px 15px;">โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ</a></li>
-                    <li class=""><a href="#list-disease15" style="padding: 3px 15px;">โรคติดเชื้อ</a></li>
-                    <li class=""><a href="#list-disease16" style="padding: 3px 15px;">โรคพยาธิ</a></li>
-                    <li class=""><a href="#list-disease17" style="padding: 3px 15px;">โรคมะเร็ง</a></li>
-                    <li class=""><a href="#list-disease18" style="padding: 3px 15px;">โรคติดเชื้ออุบัติใหม่</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1" style="padding: 3px 15px;">โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2" style="padding: 3px 15px;">โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3" style="padding: 3px 15px;">โรคระบบประสาทและสมอง</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4" style="padding: 3px 15px;">โรคระบบไหลเวียนโลหิตและโรคเลือด</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5" style="padding: 3px 15px;">โรคระบบกระดูกและกล้ามเนื้อ</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6" style="padding: 3px 15px;">โรคระบบต่อมไร้ท่อและโภชนาการ</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7" style="padding: 3px 15px;">โรคระบบทางเดินปัสสาวะ</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false" aria-controls="collapse8" style="padding: 3px 15px;">โรคหู</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="false" aria-controls="collapse9" style="padding: 3px 15px;">โรคตา</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false" aria-controls="collapse10" style="padding: 3px 15px;">โรคผิวหนัง</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false" aria-controls="collapse11" style="padding: 3px 15px;">โรคติดต่อทางเพศสัมพันธ์</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false" aria-controls="collapse12" style="padding: 3px 15px;">โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="false" aria-controls="collapse13" style="padding: 3px 15px;">โรคติดเชื้อ</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="false" aria-controls="collapse14" style="padding: 3px 15px;">โรคพยาธิ</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="false" aria-controls="collapse15" style="padding: 3px 15px;">โรคมะเร็ง</a></li>
+                    <li class=""><a class="nav-collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="false" aria-controls="collapse16" style="padding: 3px 15px;">โรคติดเชื้ออุบัติใหม่</a></li>
                   </ul>
-                </nav>                
-              </div><!-- box-body -->
-            </div><!-- box -->
+                </nav>        --> 
 
-          </div><!--Nav barcol-md-3-->
+              <!-- </div> --><!-- box-body -->
+            <!-- </div> --><!-- box -->
+
+          <!-- </div> --><!--Nav barcol-md-3-->
+
         </div><!--row layout-->
 
         </section><!-- /.content -->
@@ -549,10 +549,31 @@
 
         // });
         
-        /**Change tab***/
+
+        $(document).on("click",".nav-collapsed",function(){
+            var diseasePane = $(this[0].attributes[3].nodeValue);
+            alert(diseasePane);
+
+        });
+
+        /**Change tab and call Ajax***/
         $('.panel-heading').click(function(){
-          var temp = $(this)[0].id;
-          alert(temp.substr(7));
+          var diseasePane = $(this)[0].id;
+          var year = $('#sel-year').val();
+          //alert(temp.substr(7));
+          if(diseasePane == "heading1"){
+            showTalbeDisease(year,'โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ','table-disease1');
+          }
+          else if(diseasePane == "heading2"){
+            showTalbeDisease(year,'โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร','table-disease2');
+          }
+          else if(diseasePane == "heading3"){
+            showTalbeDisease(year,'โรคระบบประสาทและสมอง','table-disease3');
+          }
+          else if(diseasePane == "heading4"){
+            showTalbeDisease(year,'โรคระบบไหลเวียนโลหิตและโรคเลือด','table-disease4');
+          }
+
         });
 
 
@@ -561,7 +582,7 @@
         //Update when year is changed
         $('#sel-year').change(function(){
           updateAllTableDisease();
-          alert($('#sel-year').val());
+          //alert($('#sel-year').val());
         });
     });
 
@@ -589,8 +610,8 @@
       var year = $('#sel-year').val();
       //alert(year);
       showTalbeDisease(year,'โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ','table-disease1');
-      showTalbeDisease(year,'โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร','table-disease2');
-      showTalbeDisease(year,'โรคระบบประสาทและสมอง','table-disease3');
+      // showTalbeDisease(year,'โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร','table-disease2');
+      // showTalbeDisease(year,'โรคระบบประสาทและสมอง','table-disease3');
       // showTalbeDisease(year,'โรคระบบไหลเวียนโลหิตและโรคเลือด','table-disease4');
       // showTalbeDisease(year,'โรคระบบกระดูกและกล้ามเนื้อ','table-disease5');
       // showTalbeDisease(year,'โรคระบบต่อมไร้ท่อและโภชนาการ','table-disease6');

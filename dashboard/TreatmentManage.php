@@ -1,141 +1,66 @@
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.2 -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Ionicons -->
-    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-    <link href="../dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect.
-    -->
-     <link href="../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+<?php 
+  $title = "MEDMOB | จัดการข้อมูล";
+  $page = "disease";
+?>
+<?php include('header_dash.php');?>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <!--
-  BODY TAG OPTIONS:
-  =================
-  Apply one or more of the following classes to get the 
-  desired effect
-  |---------------------------------------------------------|
-  | SKINS         | skin-blue                               |
-  |               | skin-black                              |
-  |               | skin-purple                             |
-  |               | skin-yellow                             |
-  |               | skin-red                                |
-  |               | skin-green                              |
-  |---------------------------------------------------------|
-  |LAYOUT OPTIONS | fixed                                   |
-  |               | layout-boxed                            |
-  |               | layout-top-nav                          |
-  |               | sidebar-collapse                        |  
-  |---------------------------------------------------------|
-  
-  -->
-  <?php include('../connectAzure.php');?>
-  <body class="skin-yellow">
-    <div class="wrapper">
+<?php
+    include('../connectAzure.php');
+    //*** Add Condition ***//
+      if(isset($_POST["hdnCmd"])){
+        if($_POST["hdnCmd"] == "Add")
+        {
+          $strSQL = "INSERT INTO treatment ";
+          $strSQL .="(diseaseID,detail) ";
+          $strSQL .="VALUES ";
+          $strSQL .="('".$_GET['diseaseID']."','".$_POST["txtAddDetail"]."')";
+          $objQuery = mysql_query($strSQL);
+          if(!$objQuery)
+          {
+            echo "Error Save [".mysql_error()."]";
+          }
+        }
+      }
 
-      <!-- Main Header -->
-      <header class="main-header">
+      //*** Update Condition ***//
+      if(isset($_POST["hdnCmd"])){
+        if($_POST["hdnCmd"] == "Update")
+        {
+          $strSQL = "UPDATE treatment SET ";
+          
+          $strSQL .="detail = '".$_POST["txtEditDetail"]."' ";
+          $strSQL .="WHERE treatmentID = '".$_POST["txtEditTreatmentID"]."' ";
+          $objQuery = mysql_query($strSQL);
+          if(!$objQuery)
+          {
+            echo "Error Update [".mysql_error()."]";
+          }
+        }
+      }
+      //*** Delete Condition ***//
+      if(isset($_GET["Action"])){
+        if($_GET["Action"] == "Del")
+        {
+          $strSQL = "DELETE FROM treatment ";
+          $strSQL .="WHERE treatmentID = '".$_GET["TreID"]."' ";
+          $objQuery = mysql_query($strSQL);
+          if(!$objQuery)
+          {
+            echo "Error Delete [".mysql_error()."]";
+          }
+        }
+      }
 
-        <!-- Logo -->
-        <a href="" class="logo">MEDMOB</a>
+      //Have data
+      if(isset($_GET["diseaseID"])){
 
-        <!-- Header Navbar -->
-        <nav class="navbar navbar-static-top" role="navigation">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-          </a>
-          <!-- Navbar Right Menu -->
-          <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-              <!-- User Account Menu -->
-              <li class="dropdown user user-menu">
-                <!-- Menu Toggle Button -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <!-- The user image in the navbar-->
-                  <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                  <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs"><b>ผู้ดูแลระบบ</b></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- The user image in the menu -->
-                  <li class="user-header">
-                    <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
-                    <p>
-                      
-                      <big>Admin</big>
-                    </p>
-                  </li>
-      
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Dashboard</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Log out</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-      <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
+        $strSQL = "SELECT * FROM treatment AS t JOIN disease AS d ON t.diseaseID = d.diseaseID WHERE t.diseaseID = ".$_GET["diseaseID"];
+        $objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
+        $DiseaseName = $_GET["diseaseName"];
+        
 
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
+  ?>
 
-          <!-- Sidebar user panel (optional) -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
-            </div>
-            <div class="pull-left info">
-              <p>ผู้ดูแลระบบ</p>
-              <!-- Status -->
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
-
-
-
-          <!-- Sidebar Menu -->
-          <ul class="sidebar-menu">
-            <li class="header">MEDMOB</li>
-            <li><a href="../Main.php"><span>MEDMOB Statistic</span></a></li>
-            <li class="header">Dashboard</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li ><a href="SymptomManage.php"><span>จัดการลักษณะอาการ</span></a></li>
-            <li class="active"><a href=""><span>จัดการโรค</span></a></li>
-            <li><a href="SymptomNodeShow.php"><span>คำแนะนำ</span></a></li>
-            
-          </ul><!-- /.sidebar-menu -->
-        </section>
-        <!-- /.sidebar -->
-      </aside>
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -143,11 +68,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <section class="content-header">
           <h1>
             ข้อแนะนำการปฏิบัติตัว
-            <small>โรคเยื่อหุ้มสมองอักเสบ</small>
+            <small><?php echo "โรค".$DiseaseName;?></small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="">รายการลักษณะอาการ</a></li>
+            <li><a href="DiseaseManage.php">รายการลักษณะอาการ</a></li>
             <li class="active">ข้อแนะนำ</li>
           </ol>
         </section>
@@ -159,8 +84,122 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <div class="row">
             <div class="col-md-12">
+              <!-- <div class="box" style = "height: 400px"> -->
               <div class="box">
-                <div class="" style = "width:400px;height: 700px"></div>
+                <div class="box-body">
+                  <!-- Content Page -->
+
+
+  <!-- <h1>Treatment List</h1> -->
+  <form name = "treatmentMN" method="post" action="<?php echo $_SERVER["PHP_SELF"]."?diseaseID="
+  .$_GET['diseaseID']."&diseaseName=".$_GET['diseaseName'];?>">
+    <input type="hidden" name="hdnCmd" value="">
+    <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+        <th><div align="center">Treatment ID</div></th>
+        <th><div align="center">Disease ID</div></th>
+        <th width="400px" ><div align="center">Detail</div></th>
+        <th><div align="center">Edit</div></th>
+        <th><div align="center">Delete</div></th>
+      </tr>
+      </thead>
+      <tbody>
+        
+    
+  <?php
+    while ($objResult = mysql_fetch_array($objQuery)) {
+      
+  ?>
+  <?php
+  //Check Edit Mode
+      if(isset($_GET["TreID"]) and isset($_GET["Action"])){
+        if($objResult["treatmentID"] == $_GET["TreID"] and $_GET["Action"] == "Edit")
+        {
+      ?>
+      <tr>
+        
+        <td><input name = "txtEditTreatmentID" type = "hidden" value = "<?php echo $objResult['treatmentID'];?>"><?php echo $objResult['treatmentID'];?></td>
+        <td><input name = "txtEditDiseaseID" type = "hidden" value = "<?php echo $objResult['diseaseID'];?>"><?php echo $objResult['name'];?></td>
+        <td>
+          <div class="form-group">
+            <textarea style="resize:none;height:85px;width:400px;" name ="txtEditDetail" class="form-control" rows="4"><?php echo $objResult['detail'];?>
+            </textarea>
+          </div>
+            <!-- <input name = "txtEditDetail" type = "text" value ="<?php echo $objResult['detail'];?>"> -->
+        </td>
+        <td colspan="2" align="right"><div align="center">
+                <input name="btnUpdate" class="btn btn-info" type="button" id="btnUpdate" value="Update" OnClick="treatmentMN.hdnCmd.value='Update';treatmentMN.submit();">
+                <input name="btnCancel" class="btn btn-default" type="button" id="btnCancel" value="Cancel" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"]."?diseaseID=".$_GET['diseaseID']."&diseaseName=".$_GET['diseaseName'];?>';">
+              </div></td>
+      </tr>
+  <?php
+        }//Edit Mode
+        else{//if not edit mode but have Get Variable
+      ?>
+        <tr>
+      <td><?php echo $objResult['treatmentID'];?></td>
+      <td><?php echo $objResult['diseaseID'];?></td>
+      <td><?php echo $objResult['detail'];?></td>
+      <td><a href = "<?php echo $_SERVER["PHP_SELF"]."?diseaseID=".$_GET['diseaseID']."&diseaseName=".$_GET['diseaseName'];?>&Action=Edit&TreID=<?php echo $objResult["treatmentID"];?>">Edit</a></td>
+      <td><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='
+        <?php echo $_SERVER["PHP_SELF"]."?diseaseID=".$_GET['diseaseID']."&diseaseName=".$_GET['diseaseName'];?>&Action=Del&TreID=<?php echo $objResult["treatmentID"];?>';}">Delete</a></td>
+
+    </tr>
+  <?php
+        }// Else of have GET variable
+      }// isset($_GET["TreID"]) and isset($_GET["Action"]
+      else// Don't have GET variable
+      {
+      ?>
+    <tr>
+      <td><?php echo $objResult['treatmentID'];?></td>
+      <td><?php echo $objResult['diseaseID'];?></td>
+      <td><?php echo $objResult['detail'];?></td>
+      <td><a href = "<?php echo $_SERVER["PHP_SELF"]."?diseaseID=".$_GET['diseaseID']."&diseaseName=".$_GET['diseaseName'];?>&Action=Edit&TreID=<?php echo $objResult["treatmentID"];?>">Edit</a></td>
+      <td><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='
+        <?php echo $_SERVER["PHP_SELF"]."?diseaseID=".$_GET['diseaseID']."&diseaseName=".$_GET['diseaseName'];?>&Action=Del&TreID=<?php echo $objResult["treatmentID"];?>';}">Delete</a></td>
+
+    </tr>
+    <?php
+         }
+      ?>
+    <?php
+     
+    }//while ($objResult = mysql_fetch_array($objQuery))
+    ?>
+        <tr>
+          <td><input type= "hidden" name="txtAddTreatmentID" ></td>
+          <td><input type= "hidden" name="txtAddDiseaseID" ></td>
+          <td><textarea style="height:85px;width:400px;" name = "txtAddDetail" class="form-control" rows="4"></textarea></td>
+          <!-- <td><input type="text" name="txtAddDetail"></td> -->
+          <td colspan="2" align="right">
+            <div align="center">
+              <input name="btnAdd" class="btn btn-success" type="button" id="btnAdd" value="Add" OnClick="treatmentMN.hdnCmd.value='Add';treatmentMN.submit();">
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      </table>
+  </form>
+  
+  <?php
+    mysql_close($objConnect);
+  }//Have get Variable----- if(isset($_GET["diseaseID"]))
+  else{ // Don't Have ID
+    ?>
+    <h1>Don't Have Detail2</h1>
+    <?php
+
+    }//else Don't Have ID
+  ?>
+  
+  <input class="btn btn-default" type = "button" style="margin: 30px 0px;" value ="<<Back" Onclick = "location.href ='DiseaseManage.php'">
+
+
+
+
+                </div><!-- box-body -->
               </div><!-- box -->
             </div><!-- col-md-12 -->
 
