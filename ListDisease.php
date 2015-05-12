@@ -573,6 +573,18 @@
           else if(diseasePane == "heading4"){
             showTalbeDisease(year,'โรคระบบไหลเวียนโลหิตและโรคเลือด','table-disease4');
           }
+          else if(diseasePane == "heading5"){
+            showTalbeDisease(year,'โรคระบบกระดูกและกล้ามเนื้อ','table-disease5');
+          }
+          else if(diseasePane == "heading6"){
+            showTalbeDisease(year,'โรคระบบต่อมไร้ท่อและโภชนาการ','table-disease6');
+          }
+          else if(diseasePane == "heading7"){
+            showTalbeDisease(year,'โรคระบบทางเดินปัสสาวะ','table-disease7');
+          }
+          else if(diseasePane == "heading8"){
+            showTalbeDisease(year,'โรคหู','table-disease8');
+          }
 
         });
 

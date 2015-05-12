@@ -100,7 +100,7 @@
        if($_GET['symptomID']!=""){
        
 
-        $strSQL = "SELECT * FROM symptomnode WHERE symptomID = ".$_GET['symptomID'];
+        $strSQL = "SELECT * FROM symptomnode WHERE symptomID = ".$_GET['symptomID']." ORDER BY isYesNode DESC";
         $objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
         $count =-1;
         $existData = 0;
@@ -183,6 +183,8 @@ function printtree($tree,$DataArray) {
             //echo '<li>'.$node['name']."-index:".$node['index'];
     ?>
         <li>
+            <?php if($DataArray[$node['index']]['isYesNode']==1){echo '<img src="../dist/img/yesIcon.png" style="width: 22px; margin-bottom: 5px;"/> ';}?>
+            <?php if($DataArray[$node['index']]['isNoNode']==1){echo '<img src="../dist/img/noIcon.png" style="width: 22px; margin-bottom: 5px;"/>';}?>
             <span  class="glyphicon glyphicon-edit" style="cursor: pointer;" Onclick="openModal('<?php echo $DataArray[$node['index']]['symptomNodeID'];?>')"></span>
             <span id='<?php echo $DataArray[$node['index']]['symptomNodeID'];?>'><?php echo $DataArray[$node['index']]['question'];?></span>
 

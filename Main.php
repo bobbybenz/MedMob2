@@ -19,24 +19,24 @@
             <div class="col-md-6"></div>
              <div class="col-md-6">
               <select id="disease-select" style="margin-top: 25px;" class="form-control">
-              <option value = "1">โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</option>
-              <option value = "2">โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร</option>
-              <option value = "3">โรคระบบประสาทและสมอง</option>
-              <option value = "4">โรคระบบไหลเวียนโลหิตและโรคเลือด</option>
-              <option value = "5">โรคระบบกระดูกและกล้ามเนื้อ</option>
-              <option value = "6">โรคระบบต่อมไร้ท่อและโภชนาการ</option>
-              <option value = "7">โรคระบบทางเดินปัสสาวะ</option>
+              <option value = "โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ">โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</option>
+              <option value = "โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร">โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร</option>
+              <option value = "โรคระบบประสาทและสมอง">โรคระบบประสาทและสมอง</option>
+              <option value = "โรคระบบไหลเวียนโลหิตและโรคเลือด">โรคระบบไหลเวียนโลหิตและโรคเลือด</option>
+              <option value = "โรคระบบกระดูกและกล้ามเนื้อ">โรคระบบกระดูกและกล้ามเนื้อ</option>
+              <option value = "โรคระบบต่อมไร้ท่อและโภชนาการ">โรคระบบต่อมไร้ท่อและโภชนาการ</option>
+              <option value = "โรคระบบทางเดินปัสสาวะ">โรคระบบทางเดินปัสสาวะ</option>
 <!--               <option value = "8">โรคระบบอวัยวะสืบพันธุ์ชาย</option>
               <option value = "9">โรคระบบอวัยวะสืบพันธุ์หญิงและการตั้งครรภ์</option> -->
-              <option value = "10">โรคหู</option>
-              <option value = "11">โรคตา</option>
-              <option value = "12">โรคผิวหนัง</option>
-              <option value = "13">โรคติดต่อทางเพศสัมพันธ์</option>
-              <option value = "14 สารพิษ และสัตว์พิษ">โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ</option>
-              <option value = "15">โรคติดเชื้อ</option>
-              <option value = "16">โรคพยาธิ</option>
-              <option value = "17">โรคมะเร็ง</option>
-              <option value = "18">โรคติดเชื้ออุบัติใหม่</option>
+              <option value = "โรคหู">โรคหู</option>
+              <option value = "โรคตา">โรคตา</option>
+              <option value = "โรคผิวหนัง">โรคผิวหนัง</option>
+              <option value = "โรคติดต่อทางเพศสัมพันธ์">โรคติดต่อทางเพศสัมพันธ์</option>
+              <option value = "โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ">โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ</option>
+              <option value = "โรคติดเชื้อ">โรคติดเชื้อ</option>
+              <option value = "โรคพยาธิ">โรคพยาธิ</option>
+              <option value = "โรคมะเร็ง">โรคมะเร็ง</option>
+              <option value = "โรคติดเชื้ออุบัติใหม่">โรคติดเชื้ออุบัติใหม่</option>
             </select>
             </div><!-- col-md-6-->  
           </div>
@@ -283,18 +283,18 @@
           }"></script>
 
     <script type="text/javascript">
-      google.setOnLoadCallback(drawChart);
+      //google.setOnLoadCallback(drawChart);
 
-      function drawChart() {
+      function drawChart(diseaseSys,year1,year2,year3,year4,year5) {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'จำนวนคนป่วย(คน)'],
-          ['2553',  1000],
-          ['2554',  1170],
-          ['2555',  660],
-          ['2556',  1030],
-          ['2557',  1030]
+          ['2553',  year1],
+          ['2554',  year2],
+          ['2555',  year3],
+          ['2556',  year4],
+          ['2557',  year5]
         ]);
-        var disease ="โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ"
+        var disease = diseaseSys
         var options = {
           title: 'แนวโน้ม'+disease,
           //backgroundColor: '#ECF0F5',
@@ -304,14 +304,14 @@
 
         var chart1 = new google.visualization.LineChart(document.getElementById('curve_chart1'));
         chart1.draw(data, options);
-        var chart2 = new google.visualization.LineChart(document.getElementById('curve_chart2'));
-        chart2.draw(data, options);
-        var chart3 = new google.visualization.LineChart(document.getElementById('curve_chart3'));
-        chart3.draw(data, options);
-        var chart4 = new google.visualization.LineChart(document.getElementById('curve_chart4'));
-        chart4.draw(data, options);
-        var chart5 = new google.visualization.LineChart(document.getElementById('curve_chart5'));
-        chart5.draw(data, options);
+        // var chart2 = new google.visualization.LineChart(document.getElementById('curve_chart2'));
+        // chart2.draw(data, options);
+        // var chart3 = new google.visualization.LineChart(document.getElementById('curve_chart3'));
+        // chart3.draw(data, options);
+        // var chart4 = new google.visualization.LineChart(document.getElementById('curve_chart4'));
+        // chart4.draw(data, options);
+        // var chart5 = new google.visualization.LineChart(document.getElementById('curve_chart5'));
+        // chart5.draw(data, options);
       }
     </script>
 <script>
@@ -320,17 +320,21 @@
 
   $(document).ready(function(){
       //Change Tab Section
-
-      updateTable("central","table-central","curve_chart1")
+      drawChart("โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ",1000,1170,660,1030,900);
+      updateTable("central","table-central","curve_chart1");
       $('#disease-select').change(function(){
         //alert($('#disease-select').val());
-        updateTable();
+        //updateTable();
+        var disease = $('#disease-select').val();
+        drawChart(disease,32,13,44,41,75);
+        updateTable("central","table-central","curve_chart1");
       });
 
   });
 
   function updateTable(section,tableID,graphID){
     var diseaseSys = $('#disease-select').val();
+    
     $.ajax({
       type:"POST",
       url : "ajaxMain.php",
@@ -355,7 +359,7 @@
     }
     else if(sectionA[0].hash=="#north-pane"){
   
-      updateTable("north","table-north","curve_chart2");
+      //updateTable("north","table-north","curve_chart2");
     }
     else if(sectionA[0].hash=="#north-pane"){
  
