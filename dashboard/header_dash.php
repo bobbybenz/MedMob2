@@ -142,8 +142,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li><a href="../Main.php"><span>MEDMOB Statistic</span></a></li>
             <li class="header">Dashboard</li>
             <!-- Optionally, you can add icons to the links -->
-            <li <?php if($page == "symptom"){echo "class='active'";}?>><a href="symptomManage.php"><span>จัดการลักษณะอาการ</span></a></li>
-            <li <?php if($page == "disease"){echo "class='active'";}?>><a href="diseaseManage.php"><span>จัดการโรค</span></a></li>
+            <li <?php if($page == "symptom"){echo "class='active'";}?>><a href="SymptomManage.php"><span>จัดการลักษณะอาการ</span></a></li>
+            <li <?php if($page == "disease"){echo "class='active'";}?>><a href="DiseaseManage.php"><span>จัดการโรค</span></a></li>
             <li <?php if($page == "question"){echo "class='active'";}?>><a href="SymptomNodeShow.php"><span>จัดการคำถามอาการ</span></a></li>
             
           </ul><!-- /.sidebar-menu -->

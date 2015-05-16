@@ -2,7 +2,7 @@
   $title = "MEDMOB | Dashboard";
   $page = "dashboard";
   //Go to Symptom Manage Page
-  header("Location:symptomManage.php");
+  header("Location:SymptomManage.php");
   die();
 ?>
 <?php include('header_dash.php');?>
