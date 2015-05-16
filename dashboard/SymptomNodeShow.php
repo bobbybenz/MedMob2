@@ -185,9 +185,10 @@ function printtree($tree,$DataArray) {
         <li>
             <?php if($DataArray[$node['index']]['isYesNode']==1){echo '<img src="../dist/img/yesIcon.png" style="width: 22px; margin-bottom: 5px;"/> ';}?>
             <?php if($DataArray[$node['index']]['isNoNode']==1){echo '<img src="../dist/img/noIcon.png" style="width: 22px; margin-bottom: 5px;"/>';}?>
-            <span  class="glyphicon glyphicon-edit" style="cursor: pointer;" Onclick="openModal('<?php echo $DataArray[$node['index']]['symptomNodeID'];?>')"></span>
+            <span  class="glyphicon glyphicon-edit" style="cursor: pointer;" Onclick="openModal('<?php echo $DataArray[$node['index']]['symptomNodeID'];?>','<?php echo $DataArray[$node['index']]['haveAdditionData'];?>','<?php echo $DataArray[$node['index']]['typeAdditionData'];?>')"></span>
             <span id='<?php echo $DataArray[$node['index']]['symptomNodeID'];?>'><?php echo $DataArray[$node['index']]['question'];?></span>
-
+            <span id="haveAdditionData<?php echo $DataArray[$node['index']]['symptomNodeID'];?>"><?php echo $DataArray[$node['index']]['haveAdditionData'];?></span>
+            <span id="typeAdditionData<?php echo $DataArray[$node['index']]['symptomNodeID'];?>"><?php echo $DataArray[$node['index']]['typeAdditionData'];?></span>
     <?php
         //Check Add Yes Node
         if($DataArray[$node['index']]['yesNodeID'] ==null){
@@ -266,6 +267,26 @@ function printtree($tree,$DataArray) {
             <textarea id="edit-question" class="form-control" rows="3"></textarea>
             <input type="hidden" id="hid-id"/>
         </div>
+        <input class="have-addition-data" type = "checkbox" name = "chkAdditionData">ข้อมูลเพิ่มเติม
+        <br>
+        <div id="type-addition-data">
+            <div class="row">
+                <div class="col-md-4">
+                    ประเภทของข้อมูลเพิ่มเติม: 
+                </div>
+                <div class="col-md-3">
+                    <select name="slcTypeAdditionData" id ="data-add" class="form-control">
+                      <option value = "อุณหภูมิ">อุณหภูมิ</option>
+                      <option value = "ความดัน">ความดัน</option>
+                      <option value = "เพศชาย">เพศชาย</option>
+                      <option value = "เพศหญิง">เพศหญิง</option>
+                      <option value = "ชีพจร">ชีพจร</option>  
+                    </select>
+                </div>
+            </div>
+            
+            
+          </div><!-- End: type-addition-data -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -316,7 +337,26 @@ function printtree($tree,$DataArray) {
         window.location="SymptomNodeAdd.php?typeNode="+typeNode+"&symptomNodeID="+symptomNodeID;
       }
 
-        function openModal(symptomNodeID){
+        function openModal(symptomNodeID,haveAdditionData,typeAdditionData){
+
+            //Test attrbute
+            //$('.have-addition-data').removeAttr('checked');
+            
+            
+            if(haveAdditionData == 1){
+                //alert(haveAdditionData+typeAdditionData);
+                
+                $('.have-addition-data').attr( 'checked', true )
+                $('#type-addition-data').show();
+                var data = typeAdditionData;
+                $("#data-add option[value='" + data + "']").attr("selected","selected");
+            }
+            else{
+                $('.have-addition-data').removeAttr('checked');
+                $('#type-addition-data').hide();
+                $("#data-add option[value='อุณหภูมิ']").attr("selected","selected");
+            }
+                    
             var nodeid = symptomNodeID;
             var nodequestion = document.getElementById(nodeid).innerHTML;
             //alert('Onclick: '+nodequestion);
@@ -347,6 +387,20 @@ function printtree($tree,$DataArray) {
                     }
                 });
             });
+
+
+            //Addition Data 
+            $('#type-addition-data').hide();
+            $('.have-addition-data').click(function(){
+                if($(this).prop('checked')){
+                    //is(':checked')){
+                    $('#type-addition-data').show();
+                }
+                else{
+                    $('#type-addition-data').hide();
+            }
+
+        });
 
         });
 
