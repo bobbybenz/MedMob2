@@ -5,18 +5,30 @@
 			//Udate Edit data on Database
 			$idnode = $_POST['idnode'];
 			$datanode = $_POST['data'];
-			$strSQL = "UPDATE symptomnode SET question = '".$datanode."' WHERE symptomNodeID = '".$idnode."'";
+			$haveAdditionData = $_POST['haveAddition'];
+
+			if($haveAdditionData ==1){
+				$typeAdditionData = $_POST['typeAddition'];	
+			}
+			else{
+				$typeAdditionData = null;
+			}
+			$strSQL = "UPDATE symptomnode SET question = '".$datanode."',haveAdditionData = '".$haveAdditionData."',typeAdditionData ='".$typeAdditionData."' WHERE symptomNodeID = '".$idnode."'";
 			$objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
+			//echo $typeAdditionData;
 			echo $datanode;
-		
+
 		}else if($_POST['type']=="delete"){
-			$idnode = $_POST['idnode'];
+			$idnode = $_POST['nodeID'];
+			echo $idnode;
+
+
 			//Delete Node on Database
-			$strSQL = "DELETE FROM symptomnode WHERE symptomNodeID = '".$idnode."'";
+			//$strSQL = "DELETE FROM symptomnode WHERE symptomNodeID = '".$idnode."'";
 			//$objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
 			
 			//Update Yes-No Value of parent node is NULL
-			$strSQLSelectParent = "SELECT * FROM symptomnode WHERE yesNodeID = '".$idnode."' OR noNodeID = '".$idnode."'";
+			//$strSQLSelectParent = "SELECT * FROM symptomnode WHERE yesNodeID = '".$idnode."' OR noNodeID = '".$idnode."'";
 			// $objQuerySelectParent = mysql_query($strSQLSelectParent) or die ("Error Query [".$strSQLSelectParent."]");
 			// $objResultSelectParent = mysql_fetch_array($objQuerySelectParent);
 			// while($objResultSelectParent = mysql_fetch_array($objQuery)){
@@ -35,7 +47,7 @@
 			//Udate Parent Node Value of child node is NULL
 			//.....
 
-			echo "Complete";
+			//echo "Complete";
 		}
 
 	}

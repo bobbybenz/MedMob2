@@ -185,10 +185,10 @@ function printtree($tree,$DataArray) {
         <li>
             <?php if($DataArray[$node['index']]['isYesNode']==1){echo '<img src="../dist/img/yesIcon.png" style="width: 22px; margin-bottom: 5px;"/> ';}?>
             <?php if($DataArray[$node['index']]['isNoNode']==1){echo '<img src="../dist/img/noIcon.png" style="width: 22px; margin-bottom: 5px;"/>';}?>
-            <span  class="glyphicon glyphicon-edit" style="cursor: pointer;" Onclick="openModal('<?php echo $DataArray[$node['index']]['symptomNodeID'];?>','<?php echo $DataArray[$node['index']]['haveAdditionData'];?>','<?php echo $DataArray[$node['index']]['typeAdditionData'];?>')"></span>
+            <span  class="glyphicon glyphicon-edit" style="cursor: pointer;" Onclick="openModal('<?php echo $DataArray[$node['index']]['symptomNodeID'];?>');"></span>
             <span id='<?php echo $DataArray[$node['index']]['symptomNodeID'];?>'><?php echo $DataArray[$node['index']]['question'];?></span>
-            <span id="haveAdditionData<?php echo $DataArray[$node['index']]['symptomNodeID'];?>"><?php echo $DataArray[$node['index']]['haveAdditionData'];?></span>
-            <span id="typeAdditionData<?php echo $DataArray[$node['index']]['symptomNodeID'];?>"><?php echo $DataArray[$node['index']]['typeAdditionData'];?></span>
+            <input id="haveAdditionData<?php echo $DataArray[$node['index']]['symptomNodeID'];?>" type="hidden" value="<?php echo $DataArray[$node['index']]['haveAdditionData'];?>">
+            <input id="typeAdditionData<?php echo $DataArray[$node['index']]['symptomNodeID'];?>" type="hidden" value="<?php echo $DataArray[$node['index']]['typeAdditionData'];?>">
     <?php
         //Check Add Yes Node
         if($DataArray[$node['index']]['yesNodeID'] ==null){
@@ -211,10 +211,7 @@ function printtree($tree,$DataArray) {
             <button style ="height:30;margin:3px" class="btn btn-danger" type="button" Onclick='JavaScript:
             goToSymptomNodeAdd("noNode","<?php echo $DataArray[$node['index']]['symptomNodeID'];?>");
             '><span class="glyphicon glyphicon-remove-circle"></span> No Node</button>
-            <!-- <input type='button' value='No Node' 
-            Onclick='JavaScript:
-            goToSymptomNodeAdd("noNode","<?php echo $DataArray[$node['index']]['symptomNodeID'];?>");
-            '> -->
+   
 
         <?php
         }//if($DataArray[$node['index']['noNodeID'] ==null)
@@ -224,18 +221,26 @@ function printtree($tree,$DataArray) {
             $strSQLCheck = "SELECT * FROM diseaseofsymptom WHERE symptomNodeID=".$DataArray[$node['index']]['symptomNodeID'];
             $objQueryCheck = mysql_query($strSQLCheck);
             $result = mysql_fetch_array($objQueryCheck);           
-            //echo "objQueryCheck:".$objQueryCheck."\n";
-            //echo "objQueryCheck: ".$result."\n";
+
             if($result==null){
                        
     ?>
-        <a href = "DiseaseOfSymptomNodeManage.php?symptomNodeID=<?php echo $DataArray[$node['index']]['symptomNodeID'];?>&type=Add" > Add Disease </a>
+        <a href = "DiseaseOfSymptomNodeManage.php?symptomNodeID=<?php echo $DataArray[$node['index']]['symptomNodeID'];?>&type=Add" >เพิ่มโรค</a> |
+        <a onclick="if(confirm('คุณแน่ใจที่จะลบคำถามนี้?')==true){
+            deleteNode('<?php echo $DataArray[$node['index']]['symptomNodeID'];?>','<?php echo $DataArray[$node['index']]['symptomID'];?>');
+        }
+        " style="cursor: pointer; color: red;">ลบคำถาม</a>
     
     <?php
         }//if($result==null)
         else{
         ?>
-            <a href = "DiseaseOfSymptomNodeManage.php?symptomNodeID=<?php echo $DataArray[$node['index']]['symptomNodeID'];?>&type=Add" > Edit Disease </a>
+            <a href = "DiseaseOfSymptomNodeManage.php?symptomNodeID=<?php echo $DataArray[$node['index']]['symptomNodeID'];?>&type=Add" > แก้ไขโรค </a>|
+        <a onclick="if(confirm('คุณแน่ใจที่จะลบคำถามนี้?')==true){
+            deleteNode('<?php echo $DataArray[$node['index']]['symptomNodeID'];?>','<?php echo $DataArray[$node['index']]['symptomID'];?>');
+        }
+        " style="cursor: pointer; color: red;">ลบคำถาม</a>
+
         <?php }
         }//if($DataArray[$node['index']['yesNodeID'] ==null && $objResult['noNodeID'] ==null)
 
@@ -267,7 +272,7 @@ function printtree($tree,$DataArray) {
             <textarea id="edit-question" class="form-control" rows="3"></textarea>
             <input type="hidden" id="hid-id"/>
         </div>
-        <input class="have-addition-data" type = "checkbox" name = "chkAdditionData">ข้อมูลเพิ่มเติม
+        <input id="check-add" class="have-addition-data" type = "checkbox" name = "chkAdditionData">ข้อมูลเพิ่มเติม
         <br>
         <div id="type-addition-data">
             <div class="row">
@@ -289,6 +294,7 @@ function printtree($tree,$DataArray) {
           </div><!-- End: type-addition-data -->
       </div>
       <div class="modal-footer">
+
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="button-update">Update</button>
       </div>
@@ -332,62 +338,109 @@ function printtree($tree,$DataArray) {
     <script type="text/javascript" src="../plugins/selectpicker/js/bootstrap-select.js"></script>
 
       <script>
-      function goToSymptomNodeAdd(typeNode, symptomNodeID){
-        //alert("typeNode:"+typeNode+"symptomNodeID:"+symptomNodeID);
-        window.location="SymptomNodeAdd.php?typeNode="+typeNode+"&symptomNodeID="+symptomNodeID;
-      }
+        function goToSymptomNodeAdd(typeNode, symptomNodeID){
+            //alert("typeNode:"+typeNode+"symptomNodeID:"+symptomNodeID);
+            window.location="SymptomNodeAdd.php?typeNode="+typeNode+"&symptomNodeID="+symptomNodeID;
+        }
 
-        function openModal(symptomNodeID,haveAdditionData,typeAdditionData){
+        function openModal(symptomNodeID){
 
             //Test attrbute
             //$('.have-addition-data').removeAttr('checked');
-            
-            
-            if(haveAdditionData == 1){
-                //alert(haveAdditionData+typeAdditionData);
-                
-                $('.have-addition-data').attr( 'checked', true )
-                $('#type-addition-data').show();
-                var data = typeAdditionData;
-                $("#data-add option[value='" + data + "']").attr("selected","selected");
-            }
-            else{
-                $('.have-addition-data').removeAttr('checked');
-                $('#type-addition-data').hide();
-                $("#data-add option[value='อุณหภูมิ']").attr("selected","selected");
-            }
-                    
             var nodeid = symptomNodeID;
             var nodequestion = document.getElementById(nodeid).innerHTML;
             //alert('Onclick: '+nodequestion);
             $('#testModal').modal('show');
+
             $('#edit-question').val(nodequestion);
             $('#hid-id').val(nodeid);
+            var havaData = $('#haveAdditionData'+nodeid).val();
+            var typeData = $('#typeAdditionData'+nodeid).val();
+            //alert(typeof(havaData)+havaData+typeof(typeData)+typeData);
+            if(havaData == '1'){
+                
+              
+                $( "#check-add").prop('checked', true);
+                //$('.have-addition-data').prop('checked');
+                $('#type-addition-data').show();
+                var data = typeData;
+                $("#data-add option[value='" + data + "']").prop("selected",true);
+            }
+            else if(havaData=='0'){
+
+                $('.have-addition-data').attr( "checked", false );
+                $('#type-addition-data').hide();
+                $("#data-add :selected").prop('selected', false);
+            }
         }
 
+
+        function deleteNode(nodeid,symptomid){
+            //alert(nodeid+"----"+symptomid);
+            return $.ajax({
+                type: "POST",
+                url: "SymptomNodeUpdate.php",
+                data: {type:"delete",nodeID:nodeid},
+                success: function(result) {
+                    //alert("result : "+result); 
+                    window.location="SymptomNodeShow.php?symptomID="+symptomid;         
+                }
+            });//ajax
+
+            
+        }
         //Query data when selector was changed 
         $(document).ready(function(){
+            // Show Decision Tree
             $('#symptom-list').change(function(){
                 $('#symptom-update').submit();
-                //alert("test");
+         
             });
 
+            //Edit Question
             $('#button-update').click(function(){
                 var data = $('#edit-question').val();
                 var idNode = $('#hid-id').val();
-                //alert("Data : "+data);
+
+                var typeAdditionData = $('#data-add').val();
+                var haveAdditionData;
+                if($('#check-add').prop('checked')){
+                    //is(':checked')){
+                    haveAdditionData = 1;
+                }
+                else{
+                    haveAdditionData =0 ;
+                }
+                //alert(haveAdditionData+typeAdditionData);
+
                  $.ajax({
                     type: "POST",
                     url: "SymptomNodeUpdate.php",
-                    data: {data: data,type: "update",idnode:idNode},
+                    data: {data: data,type: "update",idnode:idNode,haveAddition:haveAdditionData,typeAddition:typeAdditionData},
                     success: function(result) {
                         //alert("result : "+result);
                         $('#'+idNode).html(result);
+                        if(haveAdditionData == 1){
+                            $('#haveAdditionData'+idNode).val('1');
+                            $('#typeAdditionData'+idNode).val(typeAdditionData);
+                        }
+                        else{
+                            $('#haveAdditionData'+idNode).val('0');
+                            $('#typeAdditionData'+idNode).val(null);
+                        }
+                       
+                        //alert( "Hava"+ $('#haveAdditionData'+idNode).val()+"---"+$('#typeAdditionData'+idNode).val());
                         $('#testModal').modal('hide');
+
                     }
                 });
             });
 
+            //clear value in Modal
+            $('#testModal').on('hidden.bs.modal', function () {
+                // do something…
+                $("#data-add").find('option:selected').removeAttr("selected");
+            })
 
             //Addition Data 
             $('#type-addition-data').hide();
@@ -402,7 +455,9 @@ function printtree($tree,$DataArray) {
 
         });
 
-        });
+
+
+    });//Document.ready
 
     </script>
 
