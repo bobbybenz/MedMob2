@@ -383,7 +383,10 @@ function printtree($tree,$DataArray) {
                 data: {type:"delete",nodeID:nodeid},
                 success: function(result) {
                     //alert("result : "+result); 
-                    window.location="SymptomNodeShow.php?symptomID="+symptomid;         
+                    if(result ="complete"){
+                        window.location="SymptomNodeShow.php?symptomID="+symptomid;     
+                    }
+           
                 }
             });//ajax
 

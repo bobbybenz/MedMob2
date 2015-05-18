@@ -123,7 +123,7 @@
         <td><input name = "txtEditName" type = "text" class="form-control" autofocus value ="<?php echo $objResult['name'];?>"></td>
         <td>
             <select name = "txtEditTypeOfSymptom" class="form-control">
-              <option value = "โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ" <?php if($objResult["type"]=="โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ") echo "selected";?>>โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</option>
+              <option value = "โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ" <?php if($objResult["type"]=="โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ") echo "selected";?>>โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</option>
               <option value = "โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร" <?php if($objResult["type"]=="โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร") echo "selected";?>>โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร</option>
               <option value = "โรคระบบประสาทและสมอง" <?php if($objResult["type"]=="โรคระบบประสาทและสมอง") echo "selected";?>>โรคระบบประสาทและสมอง</option>
               <option value = "โรคระบบไหลเวียนโลหิตและโรคเลือด" <?php if($objResult["type"]=="โรคระบบไหลเวียนโลหิตและโรคเลือด") echo "selected";?>>โรคระบบไหลเวียนโลหิตและโรคเลือด</option>
@@ -190,7 +190,7 @@
           <td><input type="text" class="form-control" name="txtAddName"></td>
           <td>
              <select name = "txtAddTypeOfSymptom" class="form-control">
-              <option value = "โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ">โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</option>
+              <option value = "โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ">โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ</option>
               <option value = "โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร">โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร</option>
               <option value = "โรคระบบประสาทและสมอง">โรคระบบประสาทและสมอง</option>
               <option value = "โรคระบบไหลเวียนโลหิตและโรคเลือด">โรคระบบไหลเวียนโลหิตและโรคเลือด</option>
