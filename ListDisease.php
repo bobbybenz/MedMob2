@@ -562,7 +562,7 @@
           var year = $('#sel-year').val();
           //alert(temp.substr(7));
           if(diseasePane == "heading1"){
-            showTalbeDisease(year,'โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ','table-disease1');
+            showTalbeDisease(year,'โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ','table-disease1');
           }
           else if(diseasePane == "heading2"){
             showTalbeDisease(year,'โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร','table-disease2');
@@ -621,7 +621,7 @@
     function updateAllTableDisease(){
       var year = $('#sel-year').val();
       //alert(year);
-      showTalbeDisease(year,'โรคระบบตทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ','table-disease1');
+      showTalbeDisease(year,'โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ','table-disease1');
       // showTalbeDisease(year,'โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร','table-disease2');
       // showTalbeDisease(year,'โรคระบบประสาทและสมอง','table-disease3');
       // showTalbeDisease(year,'โรคระบบไหลเวียนโลหิตและโรคเลือด','table-disease4');

@@ -116,7 +116,7 @@
 $(document).ready(function() {
     //console.log( "ready!" );
     //drawBasic();
-    drawChart();
+    //drawChart();
     updateValue()
     $('#province-id').change(function(){
       updateValue()
@@ -135,6 +135,7 @@ function updateValue(){
   var year = $('#sel-year').val();
 
   //alert(provinceID+year);
+  //Overall disease
   $.ajax({
         type:"POST",
         url: "ajaxProvince.php",
@@ -143,6 +144,38 @@ function updateValue(){
             //alert("result : "+result);
             //alert(data);
             $("#table-1").html(data);
+          }
+
+      });//ajax
+
+  //Overall Graph
+   $.ajax({
+        type:"POST",
+        url: "ajaxProvince.php",
+        data: {action: "graphDisease" ,typeData: "data-table", provinceID: provinceID,year:year},
+        success: function(data) {
+            
+            //alert(data);
+           var dataArray = $.parseJSON(data);
+           var sys1 = dataArray['sys1'];
+           var sys2 = dataArray['sys2'];
+           var sys3 = dataArray['sys3'];
+           var sys4 = dataArray['sys4'];
+           var sys5 = dataArray['sys5'];
+           var sys6 = dataArray['sys6'];
+           var sys7 = dataArray['sys7'];
+           var sys8 = dataArray['sys8'];
+           var sys9 = dataArray['sys9'];
+           var sys10 = dataArray['sys10'];
+           var sys11 = dataArray['sys11'];
+           var sys12 = dataArray['sys12'];
+           var sys13 = dataArray['sys13'];
+           var sys14 = dataArray['sys14'];
+           var sys15 = dataArray['sys15'];
+           var sys16 = dataArray['sys16'];
+           drawChart(parseInt(sys1),parseInt(sys2),parseInt(sys3),parseInt(sys4),parseInt(sys5),parseInt(sys6),parseInt(sys7),parseInt(sys8),parseInt(sys9),parseInt(sys10),parseInt(sys11),parseInt(sys12),parseInt(sys13),parseInt(sys14),parseInt(sys15),parseInt(sys16));
+
+
           }
 
       });//ajax
@@ -159,70 +192,70 @@ function updateValue(){
   google.load('visualization', '1', {packages: ['corechart', 'bar']});
   //google.setOnLoadCallback(drawBasic);
 
-function drawBasic() {
+// function drawBasic() {
 
-      var data = google.visualization.arrayToDataTable([
-        ['City', '2010 Population',],
-        ['New York City, NY', 8175000],
-        ['Los Angeles, CA', 3792000],
-        ['Chicago, IL', 2695000],
-        ['Houston, TX', 2099000],
-        ['Philadelphia, PA', 1526000],
-        ['New York City, NY', 8175000],
-        ['New York City, NY', 8175000],
-        ['Los Angeles, CA', 3792000],
-        ['Chicago, IL', 2695000],
-        ['Houston, TX', 2099000],
-        ['Philadelphia, PA', 1526000],
-        ['New York City, NY', 8175000],
-        ['New York City, NY', 8175000],
-        ['Los Angeles, CA', 3792000],
-        ['Chicago, IL', 2695000],
-        ['Houston, TX', 2099000],
-        ['Philadelphia, PA', 1526000],
-        ['New York City, NY', 8175000]
+//       var data = google.visualization.arrayToDataTable([
+//         ['City', '2010 Population',],
+//         ['New York City, NY', 8175000],
+//         ['Los Angeles, CA', 3792000],
+//         ['Chicago, IL', 2695000],
+//         ['Houston, TX', 2099000],
+//         ['Philadelphia, PA', 1526000],
+//         ['New York City, NY', 8175000],
+//         ['New York City, NY', 8175000],
+//         ['Los Angeles, CA', 3792000],
+//         ['Chicago, IL', 2695000],
+//         ['Houston, TX', 2099000],
+//         ['Philadelphia, PA', 1526000],
+//         ['New York City, NY', 8175000],
+//         ['New York City, NY', 8175000],
+//         ['Los Angeles, CA', 3792000],
+//         ['Chicago, IL', 2695000],
+//         ['Houston, TX', 2099000],
+//         ['Philadelphia, PA', 1526000],
+//         ['New York City, NY', 8175000]
 
-      ]);
+//       ]);
 
-      var options = {
-        title: '',
-        bar: {groupWidth: "70%"},
-        chartArea: {width: '60%',
-        height: '90%'},
-        hAxis: {
-          title: '',
-          minValue: 0
-        },
-        vAxis: {
-          title: ''
-        }
-      };
+//       var options = {
+//         title: '',
+//         bar: {groupWidth: "70%"},
+//         chartArea: {width: '60%',
+//         height: '90%'},
+//         hAxis: {
+//           title: '',
+//           minValue: 0
+//         },
+//         vAxis: {
+//           title: ''
+//         }
+//       };
 
-      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+//       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
 
-      chart.draw(data, options);
-    }
+//       chart.draw(data, options);
+//     }
 
 
-    function drawChart() {
+    function drawChart(sys1,sys2,sys3,sys4,sys5,sys6,sys7,sys8,sys9,sys10,sys11,sys12,sys13,sys14,sys15,sys16) {
       var data = google.visualization.arrayToDataTable([
         ["โรค", "จำนวน"],
-        ["ระบบทางเดินหายใจ", 80],
-        ["ระบบทางเดินอาหาร", 49],
-        ["ระบบประศาทและสมอง", 30],
-        ["ระบบไหลเวียนโลหิต", 45],
-        ["ระบบกระดูก", 74],
-        ["ระบบต่อมไร้ท่อ", 49],
-        ["ระบบทางเดินปัสสาวะ", 30],
-        ["โรคหู", 43],
-        ["โรคตา", 88],
-        ["โรคผิวหนัง", 49],
-        ["ติดต่อทาเพศสัมพันธ์", 30],
-        ["สารพิษ และสัตว์พิษ", 45],
-        ["โรคติดเชื้อ", 78],
-        ["โรคพยาธิ", 49],
-        ["โรคมะเร็ง", 30],
-        ["โรคติดเชื้อุบัติใหม่", 49]
+        ["ระบบทางเดินหายใจ", sys1],
+        ["ระบบทางเดินอาหาร", sys2],
+        ["ระบบประศาทและสมอง", sys3],
+        ["ระบบไหลเวียนโลหิต", sys4],
+        ["ระบบกระดูก", sys5],
+        ["ระบบต่อมไร้ท่อ", sys6],
+        ["ระบบทางเดินปัสสาวะ", sys7],
+        ["โรคหู", sys8],
+        ["โรคตา", sys9],
+        ["โรคผิวหนัง", sys10],
+        ["ติดต่อทาเพศสัมพันธ์", sys11],
+        ["สารพิษ และสัตว์พิษ", sys12],
+        ["โรคติดเชื้อ", sys13],
+        ["โรคพยาธิ", sys14],
+        ["โรคมะเร็ง", sys15],
+        ["โรคติดเชื้อุบัติใหม่", sys16]
       ]);
 
 

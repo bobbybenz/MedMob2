@@ -2,7 +2,9 @@
   $title = "MEDMOB | จัดการข้อมูล";
   $page = "question";
 ?>
-<?php include('header_dash.php');?>
+<?php include('header_dash.php');
+      $symptomID = $_GET['symptomID'];
+?>
 
 
       <!-- Content Wrapper. Contains page content -->
@@ -15,7 +17,7 @@
           </h1>
           <ol class="breadcrumb">
             <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li class="active"><a href="SymptomNodeShow.php">รายการคำถามของอาการ</a></li>
+            <li class="active"><a href="SymptomNodeShow.php?symptomID=<?php echo $symptomID;?>">รายการคำถามของอาการ</a></li>
             <li class="active">เพิ่มข้อมูลคำถาม</li>
           </ol>
         </section>
@@ -35,7 +37,7 @@
                   <div class="box-body" id="">
  <?php                   
     include('../connectAzure.php');
-    $strSQL = "SELECT * FROM Symptom WHERE symptomID=".$_GET['symptomID'];
+    $strSQL = "SELECT * FROM symptom WHERE symptomID=".$_GET['symptomID'];
     $objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
     $objResult = mysql_fetch_array($objQuery);
 
@@ -87,7 +89,7 @@
 
 
       <input type="button" class="btn btn-success" value="เพิ่ม" onclick="questionCheck();">
-      <input type = "button" class="btn btn-danger" value ="Back" Onclick = "location.href ='SymptomNodeShow.php'">
+      <input type = "button" class="btn btn-danger" value ="Back" Onclick = "location.href ='SymptomNodeShow.php?symptomID=<?php echo $symptomID;?>'">
     </form>
     </div>
   </div>

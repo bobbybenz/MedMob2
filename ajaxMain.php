@@ -4,10 +4,7 @@
 	$action = $_POST['action'];
 
 	if($action == "listDisease"){
-		//$provinceID = $_POST['provinceID'];
-		//$year = $_POST['year'];
-		//$provinceID = 1;
-		//$year = 2015;
+		$section = $_POST['section'];
 		$diseaseSys = $_POST['diseaseSys'];
 		//$diseaseSys = "โรคหู";
 		// $sqlStr = "SELECT name,type,count(*) AS amount ,
@@ -60,7 +57,83 @@
 
 	}//if(action = list Disease
 	else if($action == "chart"){
+		$diseaseSys = $_POST['diseaseSys'];
+		$section = $_POST['section'];
+	 	if($section == "central"){
+          $geo_id =2 ;
+        }
+        else if($section == "north"){
+          $geo_id = 1;
+        }
+        else if($section == "south"){
+          $geo_id = 6;
+        }
+        else if($section == "east"){
+          $geo_id = 5;
+        }
+        else if($section == "west"){
+          $geo_id = 4;
+        }
+        else if($section == "northEast"){
+          $geo_id = 3;
+        }
 
+		$sqlStr = "";
+		if($diseaseSys=='โรคระบบทางเดินหายใจและโรคติดต่อโดยทางเดินหายใจ'){
+			$sqlStr = "SELECT sys1 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC ";
+		}
+		else if($diseaseSys=='โรคระบบทางเดินอาหารและโรคติดต่อโดนทางเดินอาหาร'){
+			$sqlStr = "SELECT sys2 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคระบบประสาทและสมอง'){
+			$sqlStr = "SELECT sys3 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคระบบไหลเวียนโลหิตและโรคเลือด'){
+			$sqlStr = "SELECT sys4 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($sdiseaseSys=='โรคระบบกระดูกและกล้ามเนื้อ'){
+			$sqlStr = "SELECT sys5 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคระบบต่อมไร้ท่อและโภชนาการ'){
+			$sqlStr = "SELECT sys6 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคระบบทางเดินปัสสาวะ'){
+			$sqlStr = "SELECT sys7 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคหู'){
+			$sqlStr = "SELECT sys8 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคตา'){
+			$sqlStr = "SELECT sys9 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคผิวหนัง'){
+			$sqlStr = "SELECT sys10 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคติดต่อทางเพศสัมพันธ์'){
+			$sqlStr = "SELECT sys11 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคที่เกิดจากอุบัติเหตุ สารพิษ และสัตว์พิษ'){
+			$sqlStr = "SELECT sys12 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคติดเชื้อ'){
+			$sqlStr = "SELECT sys13 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคพยาธิ'){
+			$sqlStr = "SELECT sys14 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคมะเร็ง'){
+			$sqlStr = "SELECT sys15 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}
+		else if($diseaseSys=='โรคติดเชื้ออุบัติใหม่'){
+			$sqlStr = "SELECT sys16 AS valueSys,year FROM diseaseTrend WHERE geoID = '".$geo_id."' ORDER BY year DESC";
+		}		
 
-	}
+		$arrayData = array();
+		$sqlQuery = mysql_query($sqlStr) or die ("Error Query [".$sqlStr."]");
+		while($sqlResult= mysql_fetch_array($sqlQuery)) {
+			$arrayData[$sqlResult['year']] = $sqlResult['valueSys'];
+		}//while
+		print json_encode($arrayData);
+		
+	}//if($action == "chart")
 ?>

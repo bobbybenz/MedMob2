@@ -131,7 +131,7 @@
         }//while($objResult= mysql_fetch_array($objQuery))
     if($existData==0){
         ?>
-        <input type='button' value='Add Root Node' 
+        <input type='button' class="btn btn-default" value='Add Root Node' 
             Onclick='JavaScript:
             location.href = "SymptomNodeAddRoot.php?symptomID=<?php echo $symptomID;?>";
             '>
